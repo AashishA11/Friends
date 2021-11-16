@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:diagonal="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.UserFragment">
+
+
+   <LinearLayout
+       android:id="@+id/linearLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent">
+
+      <com.github.florent37.diagonallayout.DiagonalLayout
+          android:id="@+id/diagonalLayout"
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_230mdp"
+          android:elevation="30dp"
+
+          app:diagonal_direction="left"
+          diagonal:diagonal_angle="10"
+          diagonal:diagonal_position="bottom">
+
+         <ImageView
+             android:id="@+id/coverPhoto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:scaleType="centerCrop"
+             android:src="@drawable/moneyimg" />
+
+         <View
+             android:id="@+id/view8"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" />
+
+      </com.github.florent37.diagonallayout.DiagonalLayout>
+   </LinearLayout>
+
+   <de.hdodenhof.circleimageview.CircleImageView
+       android:id="@+id/profile_image"
+       android:layout_width="@dimen/_90mdp"
+       android:layout_height="@dimen/_90mdp"
+       android:src="@drawable/man"
+       app:civ_border_color="@color/white"
+       app:civ_border_width="5dp"
+       app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="@+id/linearLayout"
+       app:layout_constraintVertical_bias="1.0" />
+
+   <ImageView
+       android:id="@+id/changeCoverPhoto"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="16dp"
+       android:layout_marginBottom="16dp"
+       android:src="@drawable/ic_image"
+       app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+       app:layout_constraintStart_toStartOf="@+id/linearLayout" />
+
+   <ImageView
+       android:id="@+id/verifiedAccount"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:src="@drawable/check"
+       app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+       app:layout_constraintEnd_toEndOf="@+id/profile_image"
+       app:layout_constraintHorizontal_bias="0.9"
+       app:layout_constraintStart_toStartOf="@+id/profile_image"
+       app:layout_constraintTop_toTopOf="@+id/profile_image"
+       app:layout_constraintVertical_bias="0.9" />
+
+   <TextView
+       android:id="@+id/userName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="4dp"
+       android:fontFamily="@font/acme"
+       android:text="penelope wisks"
+       android:textColor="#000000"
+       android:textSize="@dimen/_14font_mdp"
+       app:layout_constraintEnd_toEndOf="@+id/profile_image"
+       app:layout_constraintStart_toStartOf="@+id/profile_image"
+       app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+
+   <TextView
+       android:id="@+id/profession"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Android devleper"
+       android:textSize="@dimen/_10font_mdp"
+       app:layout_constraintEnd_toEndOf="@+id/userName"
+       app:layout_constraintStart_toStartOf="@+id/userName"
+       app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+   <View
+       android:id="@+id/callview"
+       android:layout_width="@dimen/_30mdp"
+       android:layout_height="@dimen/_30mdp"
+       android:layout_marginTop="16dp"
+       android:background="@drawable/orange_circle"
+       android:backgroundTint="@color/green"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintStart_toEndOf="@+id/CommentView"
+       app:layout_constraintTop_toBottomOf="@+id/profession" />
+
+   <ImageView
+       android:id="@+id/Call"
+       android:layout_width="@dimen/_17mdp"
+       android:layout_height="@dimen/_17mdp"
+       android:src="@drawable/telephonecall"
+       app:layout_constraintBottom_toBottomOf="@+id/callview"
+       app:layout_constraintEnd_toEndOf="@+id/callview"
+       app:layout_constraintStart_toStartOf="@+id/callview"
+       app:layout_constraintTop_toTopOf="@+id/callview" />
+
+   <View
+       android:id="@+id/CommentView"
+       android:layout_width="@dimen/_30mdp"
+       android:layout_height="@dimen/_30mdp"
+       android:layout_marginEnd="32dp"
+       android:background="@drawable/orange_circle"
+       android:backgroundTint="#E10B0B"
+       app:layout_constraintEnd_toStartOf="@+id/callview"
+       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintStart_toEndOf="@+id/AddFirendView"
+       app:layout_constraintTop_toTopOf="@+id/callview" />
+
+   <ImageView
+       android:id="@+id/commen"
+       android:layout_width="@dimen/_17mdp"
+       android:layout_height="@dimen/_17mdp"
+       android:src="@drawable/commentprofile"
+       app:layout_constraintBottom_toBottomOf="@+id/CommentView"
+       app:layout_constraintEnd_toEndOf="@+id/CommentView"
+       app:layout_constraintStart_toStartOf="@+id/CommentView"
+       app:layout_constraintTop_toTopOf="@+id/CommentView" />
+
+   <View
+       android:id="@+id/AddFirendView"
+       android:layout_width="@dimen/_30mdp"
+       android:layout_height="@dimen/_30mdp"
+       android:layout_marginEnd="32dp"
+       android:background="@drawable/orange_circle"
+       android:backgroundTint="#2196F3"
+       app:layout_constraintEnd_toStartOf="@+id/CommentView"
+       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintHorizontal_chainStyle="packed"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="@+id/CommentView" />
+
+   <ImageView
+       android:id="@+id/imageView7"
+       android:layout_width="@dimen/_17mdp"
+       android:layout_height="@dimen/_17mdp"
+       android:src="@drawable/follower"
+       app:layout_constraintBottom_toBottomOf="@+id/AddFirendView"
+       app:layout_constraintEnd_toEndOf="@+id/AddFirendView"
+       app:layout_constraintStart_toStartOf="@+id/AddFirendView"
+       app:layout_constraintTop_toTopOf="@+id/AddFirendView" />
+
+   <androidx.cardview.widget.CardView
+       android:id="@+id/cardView"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="16dp"
+       android:layout_marginTop="8dp"
+       android:layout_marginEnd="16dp"
+       app:cardCornerRadius="10dp"
+       app:cardElevation="5dp"
+       app:cardMaxElevation="5dp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/CommentView">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:paddingStart="8dp"
+          android:paddingTop="4dp"
+          android:paddingEnd="8dp"
+          android:paddingBottom="4dp">
+
+         <TextView
+             android:id="@+id/textView4"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Followers"
+             android:textSize="@dimen/_10font_mdp"
+             app:layout_constraintEnd_toStartOf="@+id/view6"
+             app:layout_constraintHorizontal_bias="0.5"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
+
+         <TextView
+             android:id="@+id/followers"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="4567"
+             android:textColor="#000000"
+             android:textSize="@dimen/_14font_mdp"
+             app:layout_constraintEnd_toEndOf="@+id/textView4"
+             app:layout_constraintStart_toStartOf="@+id/textView4"
+             app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+         <View
+             android:id="@+id/view6"
+             android:layout_width="1dp"
+             android:layout_height="0dp"
+             android:layout_marginTop="8dp"
+             android:layout_marginBottom="8dp"
+             android:background="#8F8484"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toStartOf="@+id/textView7"
+             app:layout_constraintHorizontal_bias="0.5"
+             app:layout_constraintStart_toEndOf="@+id/textView4"
+             app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+         <TextView
+             android:id="@+id/textView7"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Friends"
+             android:textSize="@dimen/_10font_mdp"
+             app:layout_constraintEnd_toStartOf="@+id/view7"
+             app:layout_constraintHorizontal_bias="0.5"
+             app:layout_constraintStart_toEndOf="@+id/view6"
+             app:layout_constraintTop_toTopOf="@+id/view6" />
+
+         <TextView
+             android:id="@+id/textView10"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="4555"
+             android:textColor="#000000"
+             android:textSize="@dimen/_14font_mdp"
+             app:layout_constraintEnd_toEndOf="@+id/textView7"
+             app:layout_constraintStart_toStartOf="@+id/textView7"
+             app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+         <View
+             android:id="@+id/view7"
+             android:layout_width="1dp"
+             android:layout_height="0dp"
+             android:layout_marginTop="8dp"
+             android:layout_marginBottom="8dp"
+             android:background="#8F8484"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toStartOf="@+id/textView8"
+             app:layout_constraintHorizontal_bias="0.5"
+             app:layout_constraintStart_toEndOf="@+id/textView7"
+             app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+         <TextView
+             android:id="@+id/textView8"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="photos"
+             android:textSize="@dimen/_10font_mdp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintHorizontal_bias="0.5"
+             app:layout_constraintStart_toEndOf="@+id/view7"
+             app:layout_constraintTop_toTopOf="@+id/view7" />
+
+         <TextView
+             android:id="@+id/textView11"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="211"
+             android:textColor="#000000"
+             android:textSize="@dimen/_14font_mdp"
+             app:layout_constraintEnd_toEndOf="@+id/textView8"
+             app:layout_constraintStart_toStartOf="@+id/textView8"
+             app:layout_constraintTop_toBottomOf="@+id/textView8" />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+   </androidx.cardview.widget.CardView>
+
+   <TextView
+       android:id="@+id/textView12"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="8dp"
+       android:layout_marginTop="8dp"
+       android:layout_marginEnd="8dp"
+       android:gravity="center"
+       android:text="The characters are spread out evenly so that the reader's attention is focused on the layout of the text instead of its content."
+       android:textSize="@dimen/_14font_mdp"
+       app:layout_constraintEnd_toEndOf="@+id/cardView"
+       app:layout_constraintStart_toStartOf="@+id/cardView"
+       app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+   <TextView
+       android:id="@+id/textView13"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="16dp"
+       android:fontFamily="@font/acme"
+       android:text="My Friends"
+       android:textColor="#000000"
+       android:textSize="18sp"
+       app:layout_constraintStart_toStartOf="@+id/textView12"
+       app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/friendRv"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="16dp"
+       android:layout_marginEnd="16dp"
+       android:layout_marginBottom="4dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
